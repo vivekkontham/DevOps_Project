@@ -1,0 +1,1 @@
+mvn clean verify sonar:sonar -Dsonar.token=squ_fcd484a1c335bb84c8038c3357518eee726e7b38 -s settings.xml

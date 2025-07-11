@@ -1,0 +1,23 @@
+fileignoreconfig:
+- filename: target/surefire-reports/TEST-com.example.demo.MyControllerTests.xml
+  checksum: 0adb6126a0d18dd501adffbf69c7405908fe5085014e741ece64bfdd057e6f33
+version: ""
+
+fileignoreconfig:
+- filename: target/surefire-reports/TEST-com.example.demo.MyControllerTests.xml
+  checksum: 27fa1ebbdb1ca27b41e113437855ebef0778cb25494c804b9b72cfb4a990a59e
+- filename: talisman_report/talisman_reports/data/report.json
+  checksum: 2c5cd34a2e6de568e8120ff3e73b113216af1840f5409aa65cafa68c731a63c9
+version: ""
+
+fileignoreconfig:
+- filename: microservice-java/templates/ingress.yaml
+  checksum: 8adf2f40943adffbf74ab5742c90a6d468150e06be46aba1c5b18069ee9dc111
+- filename: microservice-java/values.yaml
+  checksum: c25891df94264990c47f2557edd58b80e9ae02efb9c30247aa670ad25f6f6d87
+version: ""
+
+fileignoreconfig:
+- filename: output.json
+  checksum: 724feb424f68ed12e5257e901ddab27813f0444902cca321f365b179e9acc93e
+version: ""
