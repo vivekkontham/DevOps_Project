@@ -29,7 +29,7 @@ pipeline {
         stage('deploy') {
             steps {
                 sh '''
-                cd /home/vivek
+                sudo su
                 curl -u admin:Nandhu1234%40 http://34.56.145.239:8082/repository/maven-release/com/example/java-kubernetes/1.0.0/java-kubernetes-1.0.0.jar --output demo.jar
                 chmod +x demo.jar
                 java -jar demo.jar --server.port=8085 &
