@@ -30,7 +30,7 @@ pipeline {
             steps {
                 sh '''
                 cd /home/vivek
-                curl -X GET http://admin:Nandhu1234@@34.56.145.239:8082/repository/maven-release/com/example/java-kubernetes/1.0.0/java-kubernetes-1.0.0.jar --output demo.jar
+                curl -u admin:Nandhu1234%40 http://34.56.145.239:8082/repository/maven-release/com/example/java-kubernetes/1.0.0/java-kubernetes-1.0.0.jar --output demo.jar
                 java -jar demo.jar --server.port=8085 &
                 rm -rf demo.jar
                 '''  
