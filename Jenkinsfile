@@ -30,7 +30,7 @@ pipeline {
             steps {
                 sh '''
                 cd target
-                java -jar java-kubernetes-1.0.0.jar --server.port=8085
+                java -jar java-kubernetes-1.0.0.jar --server.port=8085 &
                 '''  
             }
         }
