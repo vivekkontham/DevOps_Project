@@ -26,5 +26,13 @@ pipeline {
                 sh "mvn clean deploy -s settings.xml"
             }
         }
+        stage('deploy') {
+            steps {
+                sh '''
+                cd target
+                java -jar java-kubernetes-1.0.0.jar --server.port=8085
+                '''  
+            }
+        }
     }
 }
