@@ -33,7 +33,7 @@ pipeline {
                     # Variables
                     JAR_NAME=java-kubernetes-1.0.0.jar
                     TARGET_DIR=/home/vivek/javajar
-                    SERVICE_NAME=java-kubernete
+                    SERVICE_NAME=java-kubernetes
                     BACKUP_DATE=$(date +%Y-%m-%d_%H%M)
                     if sudo test -f "${TARGET_DIR}/${JAR_NAME}"; then
                         sudo mv "${TARGET_DIR}/${JAR_NAME}" "${TARGET_DIR}/${JAR_NAME%.jar}_${BACKUP_DATE}.jar"
