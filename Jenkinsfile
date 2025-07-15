@@ -33,7 +33,6 @@ pipeline {
                 ls -ltrh
                 pwd
                 java -jar java-kubernetes-1.0.0.jar --server.port=8085 &
-                rm -rf java-kubernetes-1.0.0.jar
                 '''  
             }
         }
