@@ -41,7 +41,6 @@ pipeline {
             steps {
                 sh '''
                 echo "Building Docker image with tag: $DATE"
-                sudo su
                 docker build -t $IMAGE_NAME:$DATE .
                 '''
             }
