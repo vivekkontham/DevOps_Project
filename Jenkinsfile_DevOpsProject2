@@ -50,7 +50,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Pushing Docker image: $IMAGE_NAME:$DATE"
-                docker login -u vivekkontham -p Nandhu1234@
+                echo "Nandhu1234@" | docker login -u vivekkontham --password-stdin
                 docker push $IMAGE_NAME:$DATE
                 '''
             }
