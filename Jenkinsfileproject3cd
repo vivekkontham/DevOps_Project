@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = "vivekkontham/helloworld-devopsproject2"
+        CONTEXTNAME = "gke_dev-antonym-457303-n0_us-central1_autopilot-cluster-1"
+    }
+
+    stages {
+        stage('Docker Pull') {
+            steps {
+                sh '''
+                echo "Nandhu1234@" | docker login -u vivekkontham --password-stdin
+                docker pull $IMAGE_NAME:$TAG
+                '''
+            }
+        }
+        stage('App Deployment') {
+            steps {
+                sh '''
+                    kubectl config set-context $CONTEXTNAME
+                    cd /home/vivek/appkub
+                    sed -i "s|image: .*|image: $IMAGE_NAME:$TAG|" deployment.yaml
+                    kubectl apply -f deployment.yaml --validate=false
+                '''
+            }
+        }
+    }
+}
