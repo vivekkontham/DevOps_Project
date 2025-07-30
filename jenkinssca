@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'maven'
+    }
+
+    stages {
+        stage('OWASP Dependency-Check Scan') {
+            steps {
+                // Run OWASP Dependency-Check
+                dependencyCheck additionalArguments: '''
+                    -o ./reports
+                    -s .
+                    -f ALL
+                    --prettyPrint
+                ''', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
+
+                // Publish the report
+                dependencyCheckPublisher pattern: 'reports/dependency-check-report.xml'
+            }
+        }
+    }
+}
