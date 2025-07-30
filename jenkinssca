@@ -8,13 +8,12 @@ pipeline {
     stages {
         stage('OWASP Dependency-Check Scan') {
             steps {
-                // Run OWASP Dependency-Check
                 dependencyCheck additionalArguments: '''
                     -o ./reports
                     -s .
                     -f ALL
                     --prettyPrint
-                ''', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
+                ''', odcInstallation: 'Dependency-Check'
 
                 // Publish the report
                 dependencyCheckPublisher pattern: 'reports/dependency-check-report.xml'
